@@ -7,39 +7,12 @@
   box-sizing: border-box;
 }
 
-body {
-  background: #f8f9fa;
-  color: hsl(0, 0%, 37%);
-  line-height: 1.58;
-  font-family: "Open Sans", sans-serif;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-}
-
-.game-container {
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(
-    to bottom,
-    hsl(214, 47%, 23%),
-    hsl(237, 49%, 15%)
-  );
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
-  align-items: center;
-  /* background: red; */
-}
-
 #app {
   width: 64%;
   height: 98%;
   padding: 0.8rem 0 1.2rem;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
-  align-items: center;
 }
 
 /* game header */
@@ -47,8 +20,6 @@ body {
   width: 90%;
   padding: .5rem 2rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   border: 2px solid hsl(217, 16%, 45%);
   border-radius: 15px;
 }
@@ -59,9 +30,6 @@ body {
   padding: 1rem 1rem;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
-  align-items: center;
-  background: #f8f9fa;
   border-radius: 20px;
 }
 
@@ -96,10 +64,6 @@ body {
 }
 
 #rules-container header{
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 1.4rem;
 }
 
@@ -224,18 +188,6 @@ body {
   padding: 1.7rem 22.8rem !important;
   width: 35%;
 } */
-.user-choice {
-  /* width: 45%; */
-  height: 100%;
-  /* padding: 4.4rem 1.8rem !important; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1.3rem solid;
-  background-color: #fff;
-  border-radius: 50%;
-  z-index: 10;
-}
 
 /* .user-choice svg {
     z-index: 2;
@@ -245,7 +197,7 @@ body {
   cursor: pointer;
 }
 
-.paper {
+/* .paper {
   border: 1.4rem solid hsl(230, 89%, 62%) !important;
 }
 
@@ -255,7 +207,7 @@ body {
 
 .rock {
   border: 1.4rem solid hsl(349, 71%, 52%) !important;
-}
+} */
 
 .paper,
 .rock,
@@ -280,17 +232,6 @@ body {
 /********************
 Step 2 
 ***************/
-
-#step-2 {
-  display: flex;
-  opacity: 0;
-  transition: all 260ms;
-}
-
-#step-2.view {
-  opacity: 1;
-  z-index: 10;
-}
 
 .sides {
   width: 50%;

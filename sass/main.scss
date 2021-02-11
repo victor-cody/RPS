@@ -1,0 +1,100 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+/* General */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+p {
+	color: $scissorsGrad;
+}
+
+
+body {
+	background: $color-white;
+	font-weight: 400;
+	line-height: 1.7;
+	color: hsl(0, 0%, 37%);
+	font-family: "Barlow Semi Condensed",
+		"Lato",
+		"Open Sans",
+		sans-serif;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+#app {
+	@include flex-vertical-between
+}
+
+/* game header */
+#game-head {
+@include flex-vertical-between
+}
+
+#score-keeper {
+	@include flex-vertical-between;
+	background: $color-white;
+}
+/* rules container */
+#rules-container {
+	header {
+		display: flex;
+		flex-flow: row nowrap;
+		@include flex-vertical-between;
+	}
+}
+
+.game-container {
+	@include flex-vertical-around;
+	width: 100vw;
+	height: 100vh;
+	background: $main-background;
+}
+
+.rock{
+	@include game-element;
+	border-color: $rockGrad !important;
+}
+.paper{
+	@include game-element;
+	border-color:$paperGrad  !important;
+}
+.scissors {
+	@include game-element;
+	border-color:$scissorsGrad !important ;	
+}
+
+/********************
+Step 2 
+***************/
+
+#step-2 {
+	display: flex;
+	opacity: 0;
+	transition: all 260ms;
+
+	&.view {
+		opacity: 1;
+		z-index: 10;
+	}
+}
+
+
+.sides-title {
+	color: $color-white;
+}
+
+#user_choice_display { @include size; }
+
+#comp_side_display { 
+	@include size;
+	@include flex-center;
+	 }
