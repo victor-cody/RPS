@@ -14,11 +14,16 @@ export const viewModule = ( function () {
 			return player;
 		}
 	return {
-		changeView: function () {  
+		stepUpView: function () {  
 			//this function changes the view of the game
 			domElements.step1.classList.add("hide");
 			domElements.step2.classList.add("view");
 		} ,
+		resetView: function () { 
+			//our function to reset the view of the game
+			domElements.step1.classList.remove("hide");
+			domElements.step2.classList.remove("view");
+		 },
 		playerSelection : function (event) {  
 		// function to get and know the user choice
 		let userChoice;

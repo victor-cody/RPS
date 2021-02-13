@@ -12,9 +12,9 @@ export const domElements ={
 	scissors: document.querySelector(".scissors"),
 	empty: document.querySelector(".empty-choice"),
 	message: document.querySelector(".message"),
-	playBtn: document.querySelector("#play-btn"),
-	closeBtn: document.querySelector("#close-btn"),
-	ruleBtn: document.querySelector("#rules"),
+	playButton: document.querySelector("#play-btn"),
+	closeButton: document.querySelector("#close-btn"),
+	ruleButton: document.querySelector("#rules"),
 	//user && computer
 	userDisplay:document.querySelector( "#user_choice_display"),
 	computerDisplay: document.querySelector("#comp_side_display"),
