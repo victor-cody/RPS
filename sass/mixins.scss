@@ -1,15 +1,17 @@
 @mixin game-element {
     @include flex-center;
     height: 90%;
-    border: 1.4rem solid;
+    border: 1.2rem solid;
     background-color: #fff;
     border-radius: 50%;
     z-index: 10;
-    box-shadow: inset 0 0px 30px rgba(0, 0, 0, 0.479);
+    box-shadow: inset 0 -5px 30px rgba(0, 0, 0, 0.205),
+    inset 0 5px 30px rgba(0, 0, 0, 0.219);
     transition: all ease 200ms;
     &:hover {
         cursor: pointer;
-        box-shadow: inset 0 0px 30px rgba(0, 0, 0, 0.575);
+        box-shadow: inset 0 5px 30px rgba(0, 0, 0, 0.28),
+        inset 0 -5px 30px rgba(0, 0, 0, 0.205);
         z-index: 5;
     }
 }
@@ -26,14 +28,14 @@
       justify-content: center;
 }
 
-@mixin flex-vertical-around {
+@mixin flex-around {
     display: flex;
-    flex-flow: column nowrap;
     justify-content: space-around;
     align-items: center;
 }
 
 @mixin flex-vertical-between {
+    display:flex;
       justify-content: space-between;
       align-items: center;
 }
