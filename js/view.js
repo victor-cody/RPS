@@ -1,8 +1,8 @@
 //This file contains functions that define DOM Interactions for the app
 
-import { domElements } from "./base";
+import { domElements } from "./base.js";
 
-export const viewModule = ( function () {
+export const appView = ( function () {
 	// private to check which player moved
 		const checkPlayer = (type) => {
 			let player;

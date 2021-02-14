@@ -14,7 +14,7 @@ export const domElements ={
 	message: document.querySelector(".message"),
 	playButton: document.querySelector("#play-btn"),
 	closeButton: document.querySelector("#close-btn"),
-	ruleButton: document.querySelector("#rules"),
+	rulesButton: document.querySelector("#rules"),
 	//user && computer
 	userDisplay:document.querySelector( "#user_choice_display"),
 	computerDisplay: document.querySelector("#comp_side_display"),

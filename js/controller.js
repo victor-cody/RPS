@@ -4,13 +4,16 @@ import { appView } from './view.js';
 //The Controller. Combines functions from the view and model
 //----------------------------------------------------------
 
-export const gameController = ( function (viewCtrl) { 
+const gameController = ( function (viewCtrl) { 
+	let userChoice, compChoice;
 	//an array holding the choices the computer can choice from
 	const compChoices = ["rock", "paper", "scissors"];
 	//our score
 	let score = 0;
+	// localStorage.setItem("score", score);
 
 	function computerSelection(array = compChoices) {
+		//function to get the computer choice
 		let compChoice = array[Math.floor(Math.random() * array.length)]
 		return compChoice;
 	}
@@ -61,7 +64,7 @@ export const gameController = ( function (viewCtrl) {
 	viewCtrl.removeUIItem("user");
 	viewCtrl.removeUIItem("computer");
 	}
-	//function contains all event listeners to keep things organized.
+	// public function that contains all event listeners to keep things organized.
 	  const setupEventListeners = function () {
 
 		domElements.step1.addEventListener("click", function (event) {
@@ -71,14 +74,14 @@ export const gameController = ( function (viewCtrl) {
 			viewCtrl.stepUpView();
 			//output elements to the DOM
 			viewCtrl.addItemToUI("user", userChoice);
-			setInterval(() => {
+			setTimeout(() => {
 				viewCtrl.removeEmpty();
 			}, 300);
-			setInterval(() => {
+			setTimeout(() => {
 				//output elements to the DOM
 				viewCtrl.addItemToUI("computer", compChoice);
 			}, 620);
-			setInterval(() => {
+			setTimeout(() => {
 				checkWinner(userChoice, compChoice);
 			}, 800);
 			// UICtrl.addItem('computer',compChoice)
@@ -90,9 +93,9 @@ export const gameController = ( function (viewCtrl) {
 		  	score += 1;
 			localStorage.setItem("score", score);
 		  	//output scores to the DOM
-		  	scoreContainer.textContent = score;
+		  	scoreContainer.textContent = localStorage.getItem("score");;
 		  }
-		  setInterval(() => {
+		  setTimeout(() => {
 		  	reset();
 		  }, 320);
 	  });
@@ -116,6 +119,8 @@ export const gameController = ( function (viewCtrl) {
 	}
 	return {
 		init : function () {  
+			console.log("Game Started");
+			reset()
 			setupEventListeners()
 		}
 	}
