@@ -93,7 +93,7 @@ const gameController = ( function (viewCtrl) {
 		  	score += 1;
 			localStorage.setItem("score", score);
 		  	//output scores to the DOM
-		  	scoreContainer.textContent = localStorage.getItem("score");;
+		  	domElements.scoreKeeper.textContent = localStorage.getItem("score");;
 		  }
 		  setTimeout(() => {
 		  	reset();
@@ -103,24 +103,29 @@ const gameController = ( function (viewCtrl) {
 	  domElements.rulesButton.addEventListener("click", (e) => {
 		  // adding an EventListener to our rulesBtn to popup the rules
 		  e.preventDefault();
-		  viewCtrl.openModal(domElements.rulesContainer);
+		  viewCtrl.openModel(domElements.rulesContainer);
 	  });
 
 	domElements.closeButton.addEventListener("click", function (e) {
 		// adding an EventListener to our close Button to close the rules dialog
 		e.preventDefault();
-		UICtrl.closeModal(model);
+		viewCtrl.closeModel(domElements.rulesContainer);
 	});
 
-	window.addEventListener("DOMContentLoad", () => {
-		let score = localStorage.getItem("score")
-		domElements.scoreKeeper.textContent = parseInt(score);
+	window.addEventListener("DOMContentLoaded", () => {
+		if (localStorage.getItem("score") === null) {
+			return;
+		} else {
+			score = localStorage.getItem("score")
+			domElements.scoreKeeper.textContent = parseInt(score);
+			console.log(score);
+		}
 	})
 	}
 	return {
 		init : function () {  
 			console.log("Game Started");
-			reset()
+			// reset()
 			setupEventListeners()
 		}
 	}
