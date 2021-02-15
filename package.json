@@ -1,0 +1,32 @@
+{
+  "name": "rock-paper-scissors",
+  "version": "1.0.0",
+  "description": "this is a rock paper scissors game with an amazing UI",
+  "main": "controller.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch sass -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victor-cody/RPS.git"
+  },
+  "keywords": [
+    "rock",
+    "paper",
+    "scissors",
+    "rock",
+    "paper",
+    "scissors",
+    "game"
+  ],
+  "author": "victor ikechukwu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victor-cody/RPS/issues"
+  },
+  "homepage": "https://github.com/victor-cody/RPS#readme",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
