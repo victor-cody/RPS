@@ -30,13 +30,14 @@ some of the things I used
 # 1
  You need to pay attention to local testing — if you try to load the HTML file locally (i.e. with a file:// URL), you'll run into CORS errors due to JavaScript module security requirements. You need to do your testing through a server.
 
-<h1>
+<h3>
 <u>
  Note to run this game on the browser you'll need to run it on a local server
 </u>
-</h1>
+</h3>
 
-<h2> Here are a list of local servers you could try </h2>
+<h3> 
+<u> Here are a list of local servers you could try </u> </h3>
 <ul>
 
 </ul>

@@ -31,7 +31,7 @@
   <body>
     <div class="game-container">
       <section id="app">
-        <header id="game-head" class="">
+        <header id="game-head" class="mb-4">
           <div class="title">
             <!-- game title -->
             <svg
@@ -79,13 +79,22 @@
           <!-- Score keeper -->
           <div id="score-keeper" class="">
             <span class="score-keeper-title">score</span>
-            <span class="" id="current-score">0</span>
+            <div class=" d-flex align-items-center justify-content-between">
+            <span class="mx-2">
+              <small class="text-mute">user</small>
+              <span id="current-user-score">0</span>
+            </span>
+            <span class="mx-2">
+              <small class="text-mute">comp</small>
+              <span id="current-comp-score">0</span>
+            </span>
+            </div>  
           </div>
 
         </header>
 
         <!-- main -->
-        <main id="main">
+        <main id="main" class="">
           <!-- step 1 -->
           <section id="step-1" class="step">
             <div class="container row">
@@ -157,7 +166,7 @@
 
           <div id="validate" class="text-center">
             <h2 class="text-light message h1 ">You Win</h2>
-            <button class="btn btn-light text-danger text-uppercase" id="play-btn">play again</button>
+            <button class="btn btn-light text-dark text-uppercase" id="play-btn">play again</button>
           </div>
 
         </main>

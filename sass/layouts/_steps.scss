@@ -1,0 +1,94 @@
+/* steps */
+.step {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+#step-1 {
+	@include flex-around;
+	flex-flow: column nowrap;
+	transition: all 250ms;
+	opacity: 1;
+	padding-bottom: 1rem;
+
+	&.hide {
+		opacity: 0;
+	}
+
+	.container {
+		@include flex-around;
+		width: 100%;
+		/* height: 46%; */
+		display: flex;
+		transition: all 250ms;
+	}
+
+	.container, .rock {
+		height: 46% !important;
+	}
+
+	.user-choice {
+		width: 34%;
+		/* padding: 2rem 3.4rem  0 !important; */
+		height: 110%;
+		background-color: #fff;
+		padding: 1.7rem 2.8rem 0 !important;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+
+/* 
+#step-1 .con .user-choice {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border: 1.6rem solid ;
+    background-color: #fff;
+    border-radius:20%;
+} */
+
+/* #step-1 .paper,
+#step-1 .scissors {
+  padding: 1.7rem 22.8rem !important;
+  width: 35%;
+} */
+
+/* .user-choice svg {
+    z-index: 2;
+} */
+
+/* .paper {
+  border: 1.4rem solid hsl(230, 89%, 62%) !important;
+}
+
+.scissors {
+  border: 1.4rem solid hsl(40, 84%, 53%) !important;
+}
+
+.rock {
+  border: 1.4rem solid hsl(349, 71%, 52%) !important;
+} */
+
+/********************
+Step 2 
+***************/
+
+#step-2 {
+	display: flex;
+	opacity: 0;
+	transition: all 260ms;
+
+	&.view {
+		opacity: 1;
+		z-index: 10;
+	}
+}

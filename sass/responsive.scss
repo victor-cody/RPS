@@ -1,0 +1,120 @@
+/*******************
+Media Queries
+***************/
+
+@media screen and (min-width: 760px) {
+	#app {
+		width: 58%;
+	}
+
+	#step-1 .user-choice {
+		width: 40%;
+		padding: 2.8rem 0 0 2.4rem !important;
+	}
+
+	.rock {
+		padding: 2.2rem 1.8rem !important;
+	}
+}
+
+@media screen and (min-width: 878px) {
+	#step-1 .user-choice {
+		width: 36%;
+		padding: 2.8rem 0 0 2.8rem !important;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	#app {
+		width: 49.5%;
+	}
+
+	#step-1 .user-choice {
+		width: 40%;
+		padding: 2.5rem 0 0 2.8rem !important;
+	}
+
+	.rock {
+		padding: 2.2rem 2rem !important;
+	}
+}
+
+@media screen and (min-width: 1098px) {
+	#step-1 .user-choice {
+		width: 38%;
+		padding: 2.5rem 0 0 2.8rem !important;
+	}
+
+	.rock {
+		padding: 2.2rem 2.2rem !important;
+	}
+}
+
+@media screen and (min-width: 1120px) {
+	#app {
+		width: 48%;
+	}
+
+	#step-1 .paper,
+	#step-1 .scissors {
+		padding: 2.4rem 0 0 2.8rem !important;
+		width: 38%;
+	}
+
+	#step-1 .rock {
+		padding: 2.4rem 0 1rem 3rem !important;
+	}
+}
+
+@media screen and (min-width: 1168px) {
+	#app {
+		width: 48%;
+	}
+
+	#step-1 .paper,
+	#step-1 .scissors {
+		padding: 2.4rem 0 0 3.5rem !important;
+		width: 38%;
+	}
+}
+
+@media screen and (min-width: 1228px) {
+	#app {
+		width: 48%;
+	}
+
+	#step-1 .paper,
+	#step-1 .scissors,
+	#step-1 .rock {
+		padding: 2.4rem 0 0 2.95rem !important;
+		width: 32%;
+	}
+}
+
+
+@media screen and (min-width: 1246px) {
+	#app {
+		width: 48%;
+	}
+
+	#step-1 .paper,
+	#step-1 .scissors,
+	#step-1 .rock {
+		padding: 2.4rem 0 0 2.95rem !important;
+		width: 32%;
+	}
+}
+
+@media screen and (min-width: 1286px) {
+	#app {
+		width: 48%;
+	}
+
+	#step-1 .paper,
+	#step-1 .scissors,
+	#step-1 .rock {
+		padding: 2.4rem 0 0 3.5rem !important;
+		width: 32%;
+	}
+}
+

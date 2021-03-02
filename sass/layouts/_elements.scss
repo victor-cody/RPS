@@ -1,0 +1,33 @@
+.rock {
+	@include game-element;
+	border-color: $rockGrad !important;
+}
+
+.paper {
+	@include game-element;
+	border-color: $paperGrad !important;
+}
+
+.scissors {
+	@include game-element;
+	border-color: $scissorsGrad !important;
+}
+
+.paper,
+.rock,
+.scissors {
+	box-shadow: inset 0 4px 25px rgba(0, 0, 0, 0.479);
+	transition: all 230ms;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:hover {
+		box-shadow: inset 0 4px 25px rgba(0, 0, 0, 0.548);
+		cursor: pointer;
+	}
+}
+
+/* .rock {
+    padding: 2.5rem 2.8rem  0 !important; 
+} */

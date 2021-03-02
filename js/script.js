@@ -28,7 +28,7 @@ If the player wins, they gain 1 point. If the computer wins, the player loses on
 
 //the UI Module
 const UIModule = (function () {
-  //an object that contains all the stings will use to select our elements
+  //an object that contains all the strings will use to select our elements
   const DomStrings = {
     //header
     score: "#current-score",

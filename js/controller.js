@@ -9,7 +9,7 @@ const gameController = ( function (viewCtrl) {
 	//an array holding the choices the computer can choice from
 	const compChoices = ["rock", "paper", "scissors"];
 	//our score
-	let score = 0;
+	let userScore = 0 , computerScore = 0;
 	// localStorage.setItem("score", score);
 
 	function computerSelection(array = compChoices) {
@@ -18,39 +18,48 @@ const gameController = ( function (viewCtrl) {
 		return compChoice;
 	}
 
+	function updateScore() {
+		// function updates the user and computer's scores in the localStorage
+			localStorage.setItem("user-score", userScore);
+			localStorage.setItem("computer-score", computerScore);
+		  	//output scores to the DOM
+		  	domElements.userScoreKeeper.textContent = localStorage.getItem("user-score");
+			domElements.computerScoreKeeper.textContent = localStorage.getItem("computer-score");
+	}
+
 	function checkWinner(choice1, choice2) {
 	//our function that evaluates our inputs (user and computer) and returns a winner
 	let result;
 	//condition 1
-	if (choice1 == choice2) 
+	if (choice1 === choice2) 
 	{
 		result = "It's a Draw ";
 	} 
-	else if (choice1 == "rock") 
+	else if (choice1 === "rock") 
 	{ //condition 2
-		if (choice2 == "scissors") {
+		if (choice2 === "scissors") {
 			result = "You Win";
 		} else {
 			result = "You Lose";
 		}
 	} 
-	else if (choice1 == "paper") 
+	else if (choice1 === "paper") 
 	{ //condition 3
-		if (choice2 == "rock") {
+		if (choice2 === "rock") {
 			result = "You Win";
 		} else {
 			result = "You Lose";
 		}
 	} 
-	else if (choice1 == "scissors") 
+	else if (choice1 === "scissors") 
 	{ //condition 4
-		if (choice2 == "rock") {
+		if (choice2 === "rock") {
 			result = "You Lose";
 		} else {
 			result = "You Win";
 		}
 	}
-	domElements.message.classList.add("view");
+	domElements.validation.classList.add("view");
 	domElements.message.textContent = result;
 	return result;
 	}
@@ -60,7 +69,7 @@ const gameController = ( function (viewCtrl) {
 	userChoice = "";
 	compChoice = "";
 	viewCtrl.resetView();
-	domElements.message.classList.remove("view");
+	domElements.validation.classList.remove("view");
 	viewCtrl.removeUIItem("user");
 	viewCtrl.removeUIItem("computer");
 	}
@@ -90,11 +99,22 @@ const gameController = ( function (viewCtrl) {
 	  domElements.playButton.addEventListener("click", (e) => {
 		  e.preventDefault();
 		  if (checkWinner(userChoice, compChoice) === "You Win") {
-		  	score += 1;
-			localStorage.setItem("score", score);
-		  	//output scores to the DOM
-		  	domElements.scoreKeeper.textContent = localStorage.getItem("score");;
+		  	userScore = parseInt(userScore) + 1;
+		 // updating our score
 		  }
+		  else if (checkWinner(userChoice, compChoice) === "You Lose") {
+			// if (score < 0) {
+			// 	computerScore = parseInt(score);
+			// 	return
+			// }
+		  	computerScore = parseInt(computerScore) + 1;
+		 // updating our score
+		  }
+		  else {
+			  userScore = parseInt(userScore);
+			  computerScore = parseInt(computerScore);
+		  }
+		 updateScore()
 		  setTimeout(() => {
 		  	reset();
 		  }, 320);
@@ -116,8 +136,7 @@ const gameController = ( function (viewCtrl) {
 		if (localStorage.getItem("score") === null) {
 			return;
 		} else {
-			score = localStorage.getItem("score")
-			domElements.scoreKeeper.textContent = parseInt(score);
+			updateScore();
 			console.log(score);
 		}
 	})

@@ -1,11 +1,4 @@
 /* General */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 #app {
   width: 64%;
@@ -15,32 +8,7 @@
   flex-flow: column nowrap;
 }
 
-/* game header */
-#game-head {
-  width: 90%;
-  padding: .5rem 2rem;
-  display: flex;
-  border: 2px solid hsl(217, 16%, 45%);
-  border-radius: 15px;
-}
 
-#score-keeper {
-  height: 80%;
-  width: 28%;
-  padding: 1rem 1rem;
-  display: flex;
-  flex-flow: column nowrap;
-  border-radius: 20px;
-}
-
-#score-keeper .score-keeper-title {
-  font-size: 1.3rem;
-}
-
-#score-keeper #current-score {
-  font-size: 3rem;
-  color: hsl(229, 58%, 24%);
-}
 /* main */
 #main {
   height: 64%;
@@ -94,26 +62,6 @@
     transform: translate3d(-50%, -50%, 400px) scale(1);
   }
 }
-/* overlay */
-
-#overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  background-size: cover;
-  z-index: 20;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 300ms ease-in-out;
-}
-
-#overlay.active {
-  pointer-events: all;
-  opacity: 1;
-}
 
 #validate {
     position: absolute;
@@ -128,110 +76,13 @@
     transform: translate(-50%,-50%) scale(1);
 }
 
-/* steps */
-.step {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-#step-1 {
-  flex-flow: column nowrap;
-  transition: all 250ms;
-  opacity: 1;
-  padding-bottom: 1rem;
-}
-
-#step-1.hide {
-  opacity: 0;
-}
-
-#step-1 .container {
-  width: 100%;
-  /* height: 46%; */
-  display: flex;
-  transition: all 250ms;
-}
-
-#step-1 .container,#step-1 .rock{
-  height: 46% !important;
-}
-/* 
-#step-1 .con .user-choice {
-    width: 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    border: 1.6rem solid ;
-    background-color: #fff;
-    border-radius:20%;
-} */
-
-#step-1 .user-choice {
-  width: 34%;
-  /* padding: 2rem 3.4rem  0 !important; */
-  height: 110%;
-  background-color: #fff;
-  padding: 1.7rem 2.8rem 0 !important;
-}
-
-/* #step-1 .paper,
-#step-1 .scissors {
-  padding: 1.7rem 22.8rem !important;
-  width: 35%;
-} */
-
-/* .user-choice svg {
-    z-index: 2;
-} */
-
-.user-choice:hover {
-  cursor: pointer;
-}
-
-/* .paper {
-  border: 1.4rem solid hsl(230, 89%, 62%) !important;
-}
-
-.scissors {
-  border: 1.4rem solid hsl(40, 84%, 53%) !important;
-}
-
-.rock {
-  border: 1.4rem solid hsl(349, 71%, 52%) !important;
-} */
-
-.paper,
-.rock,
-.scissors {
-  box-shadow: inset 0 4px 25px rgba(0, 0, 0, 0.479);
-  transition: all 230ms;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* .rock {
-    padding: 2.5rem 2.8rem  0 !important; 
-} */
-
-.paper:hover,
-.rock:hover,
-.scissors:hover {
-  box-shadow: inset 0 4px 25px rgba(0, 0, 0, 0.548);
-  cursor: pointer;
-}
 /********************
 Step 2 
 ***************/
 
 .sides {
   height: 90%;
-  flex-flow: column nowrap;
-  padding: 0  .5rem 0 0; 
+  padding: 0 0 1.4rem;
 }
 
 .sides-title {
@@ -313,120 +164,3 @@ Media Queries
   .rock {
     padding: 2.2rem 1.8rem !important;
   }
-
-
-
-@media screen and (min-width: 760px) {
-  #app {
-    width: 58%;
-  }
-
-  #step-1 .user-choice {
-    width: 40%;
-    padding: 2.8rem 0 0 2.4rem !important;
-  }
-
-  .rock {
-    padding: 2.2rem 1.8rem !important;
-  }
-}
-
-@media screen and (min-width: 878px) {
-  #step-1 .user-choice {
-    width: 36%;
-    padding: 2.8rem 0 0 2.8rem !important;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  #app {
-    width: 49.5%;
-  }
-
-  #step-1 .user-choice {
-    width: 40%;
-    padding: 2.5rem 0 0 2.8rem !important;
-  }
-
-  .rock {
-    padding: 2.2rem 2rem !important;
-  }
-}
-
-@media screen and (min-width: 1098px) {
-  #step-1 .user-choice {
-    width: 38%;
-    padding: 2.5rem 0 0 2.8rem !important;
-  }
-
-  .rock {
-    padding: 2.2rem 2.2rem !important;
-  }
-}
-
-@media screen and (min-width: 1120px) {
-  #app {
-    width: 48%;
-  }
-
-  #step-1 .paper,
-  #step-1 .scissors {
-    padding: 2.4rem 0 0 2.8rem !important;
-    width: 38%;
-  }
-  #step-1 .rock {
-    padding: 2.4rem 0 1rem 3rem !important;
-  }
-}
-
-@media screen and (min-width: 1168px){
-  #app {
-    width: 48%;
-  }
-
-  #step-1 .paper,
-  #step-1 .scissors {
-    padding: 2.4rem 0 0 3.5rem !important;
-    width: 38%;
-  }
-}
-
-@media screen and (min-width: 1228px){
-  #app {
-    width: 48%;
-  }
-
-  #step-1 .paper,
-  #step-1 .scissors,
-  #step-1 .rock  {
-    padding: 2.4rem 0 0 2.95rem !important;
-    width: 32%;
-  }
-}
-
-
-@media screen and (min-width: 1246px){
-  #app {
-    width: 48%;
-  }
-
-  #step-1 .paper,
-  #step-1 .scissors,
-  #step-1 .rock  {
-    padding: 2.4rem 0 0 2.95rem !important;
-    width: 32%;
-  }
-}
-
-@media screen and (min-width: 1286px){
-  #app {
-    width: 48%;
-  }
-
-  #step-1 .paper,
-  #step-1 .scissors,
-  #step-1 .rock  {
-    padding: 2.4rem 0 0 3.5rem !important;
-    width: 32%;
-  }
-}

@@ -1,7 +1,8 @@
 // this file contains / defines all the html elements used in the game
 
 export const domElements ={
-	scoreKeeper: document.querySelector("#current-score"),
+	userScoreKeeper: document.querySelector("#current-user-score"),
+	computerScoreKeeper: document.querySelector("#current-comp-score"),
 	step1:document.querySelector("#step-1"),
 	step2: document.querySelector("#step-2"),
 	validation: document.querySelector("#validate"),

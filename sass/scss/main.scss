@@ -52,12 +52,40 @@ body {
 
 /* game header */
 #game-head {
-@include flex-vertical-between
+@include flex-vertical-between;
+width: 94%;
+padding: .1rem 1.8rem;
+  border: 2px solid hsl(217, 16%, 45%);
+  border-radius: 15px;
 }
 
 #score-keeper {
 	@include flex-vertical-between;
 	background: $color-white;
+	  height: 80%;
+	  width: 26%;
+	  padding: 1rem 1rem;
+	  flex-flow: column nowrap;
+	  border-radius: 20px;
+
+	#current-user-score,
+	#current-comp-score {
+		font-size: 3rem;
+		color: $scoreText2;
+	}
+
+	.score-keeper-title {
+		font-size: 1.3rem;
+	}
+
+	small{
+		&:nth-of-type(1) {color: $paperGrad;}
+
+		&:last-of-type {
+			color: $rockGrad;
+		}
+	}
+
 }
 /* rules container */
 #rules-container {
@@ -79,46 +107,15 @@ body {
 	background: $main-background;
 }
 
-.rock{
-	@include game-element;
-	border-color: $rockGrad !important;
-}
-.paper{
-	@include game-element;
-	border-color:$paperGrad  !important;
-}
-.scissors {
-	@include game-element;
-	border-color:$scissorsGrad !important ;	
-}
+@import "../layouts/elements";
 
 /************** Step 1 ********/
-#step-1 {
-	@include flex-around;
-	flex-flow: column nowrap;
 
-	.container {
-		@include flex-around;
-	}
-}
-
-/********************
-Step 2 
-***************/
-
-#step-2 {
-	display: flex;
-	opacity: 0;
-	transition: all 260ms;
-
-	&.view {
-		opacity: 1;
-		z-index: 10;
-	}
-}
+@import "../layouts/_steps.scss";
 
 .sides {
 	@include flex-center;
+	flex-flow: column nowrap;
 	width: (100% / 2);
 }
 
@@ -132,3 +129,5 @@ Step 2
 	@include size;
 	@include flex-center;
 	 }
+
+@import "../responsive.scss";
