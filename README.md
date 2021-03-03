@@ -1,5 +1,6 @@
-# RPS
-A browser based Rock Paper Scissors  game
+# RPS <a href="https://victor-cody.github.io/RPS/" style="{color:hsl(230, 89%, 65%)}"> View Live Demo </a>
+
+A browser based Rock Paper Scissors  game whaere the user plays against the computer :)
 # Frontend Mentor - Rock, Paper, Scissors
 
 <img src="design/desktop-preview.jpg" alt="desktop preview of game in the browser"/>
